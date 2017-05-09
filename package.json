@@ -1,0 +1,34 @@
+{
+  "name": "imagestore-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "live": "concurrently --kill-others \"watchify --entry index.js -o bundle.js\"  \"live-server --watch=bundle.js .\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thisjulio/imagestore-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thisjulio/imagestore-frontend/issues"
+  },
+  "homepage": "https://github.com/thisjulio/imagestore-frontend#readme",
+  "devDependencies": {
+    "browserify": "^14.3.0",
+    "concurrently": "^3.4.0",
+    "live-server": "^1.2.0"
+  },
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-animate": "^1.6.4",
+    "angular-aria": "^1.6.4",
+    "angular-material": "^1.1.4",
+    "angular-route": "^1.6.4",
+    "axios": "^0.16.1",
+    "store": "^2.0.4"
+  }
+}

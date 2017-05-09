@@ -1,0 +1,36 @@
+<md-dialog aria-label="Mango (Fruit)" flex="50">
+  <form ng-cloak ng-submit="login()">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Login</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+	  	<div>
+			<div>
+				<md-input-container class="md-block">
+				  <label>Email</label>
+				  <input ng-model="login.email" type="email">
+				</md-input-container>
+			</div>
+			<div>
+				<md-input-container class="md-block">
+				  <label>Password</label>
+				  <input ng-model="login.password" type="password">
+				</md-input-container>
+			</div>
+	  	</div>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button type="submit">
+        Entrar
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
