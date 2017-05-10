@@ -13,22 +13,24 @@
 			<div>
 				<md-input-container class="md-block">
 				  <label>Email</label>
-				  <input ng-model="login.email" type="email">
+				  <input ng-disabled="realizandoLogin" ng-model="login.email" type="email">
 				</md-input-container>
 			</div>
 			<div>
 				<md-input-container class="md-block">
 				  <label>Password</label>
-				  <input ng-model="login.password" type="password">
+				  <input ng-disabled="realizandoLogin" ng-model="login.password" type="password">
 				</md-input-container>
 			</div>
+			<p ng-show="msgErroLogin">{{msgErroLogin}}</p>
 	  	</div>
       </div>
+	  <md-progress-linear ng-show="realizandoLogin" md-mode="indeterminate"></md-progress-linear>
     </md-dialog-content>
 
     <md-dialog-actions layout="row">
       <span flex></span>
-      <md-button type="submit">
+      <md-button ng-disabled="realizandoLogin" type="submit">
         Entrar
       </md-button>
     </md-dialog-actions>

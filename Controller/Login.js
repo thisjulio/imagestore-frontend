@@ -4,15 +4,24 @@ module.exports = ["$scope","$mdDialog","$location","imageStore",function($scope,
 	// console.log(imageStore.user.getUser());
 	$mdDialog.show({
 		controller: ["$scope","$mdDialog",function($scope,$mdDialog){
-		  $scope.login = () => {
+		  $scope.msgErroLogin = null;
+		  $scope.realizandoLogin = false;
+			$scope.login = () => {
+			  $scope.msgErroLogin = null;
+			  $scope.realizandoLogin = true;
 			  imageStore.user.login($scope.login.email,$scope.login.password).then(
 				  (r) => {
 					  $mdDialog.hide();
 				  }
 			  ).catch(
-				  (r) => console.log(r.response)
+				  (r) => {
+					  $scope.$apply(()=>{
+						  $scope.realizandoLogin = false;
+						  $scope.msgErroLogin = r.response.data.error;
+					 });
+				  }
 			  );
-		  }
+			}
 		}],
 		templateUrl: 'Template/LoginDialog.html',
 		parent: angular.element(document.body),
